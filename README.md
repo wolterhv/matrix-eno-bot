@@ -57,9 +57,10 @@ cp matrix-eno-bot.service.example matrix-eno-bot.service
 vim matrix-eno-bot.service # adjust service to your setup
 sudo cp matrix-eno-bot.service /etc/systemd/system/matrix-eno-bot.service
 # read the comments in matrix-eno-bot.service, it tells you what to do
-systemctl enable matrix-eno-bot # create bot service
+systemctl enable matrix-eno-bot # enable automatically starting the bot at boot
 systemctl start matrix-eno-bot # start bot
 systemctl stop matrix-eno-bot # stop bot
+systemctl status matrix-eno-bot # check bot status
 ```
 
 Other hints:
@@ -297,3 +298,7 @@ The sample configuration file. People running your bot should be advised to
 copy this file to `config.yaml`, then edit it according to their needs. Be sure
 never to check the edited `config.yaml` into source control since it'll likely
 contain sensitive details like passwords!
+
+### `commands.yaml.example`
+
+The sample command dictionary file. People running your bot should be advised to copy this file to a known location, referencing it in the `config.yaml` file and editting it according to their needs.
